@@ -12,49 +12,34 @@ import {
   IconButton,
   Tabs,
   Tab,
-  TextField,
-  InputAdornment,
   Drawer,
   List,
   ListItem,
   ListItemText,
-  Divider,
-  useTheme,
-  useMediaQuery,
-  Badge,
-  Tooltip,
   Menu,
   MenuItem,
   Snackbar,
   Alert,
 } from "@mui/material";
 import {
-  Search,
   FilterList,
   Favorite,
   FavoriteBorder,
-  ShoppingCart,
   Sort,
-  ChevronLeft,
-  ChevronRight,
   AddShoppingCart,
 } from "@mui/icons-material";
 import { motion } from "framer-motion";
 import { useCart } from "../context/CartContext";
 
 const MotionCard = motion(Card);
-const MotionBox = motion(Box);
 
 const ProductList = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const [filterDrawerOpen, setFilterDrawerOpen] = useState(false);
   const [sortAnchorEl, setSortAnchorEl] = useState(null);
   const [activeTab, setActiveTab] = useState(0);
   const [favorites, setFavorites] = useState([]);
   const [snackbar, setSnackbar] = useState({ open: false, message: "" });
   const { addToCart } = useCart();
-  const navigate = useNavigate();
 
   const categories = [
     "All",

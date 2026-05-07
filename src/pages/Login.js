@@ -8,8 +8,6 @@ import {
   Button,
   Link,
   Paper,
-  useTheme,
-  useMediaQuery,
   Divider,
   InputAdornment,
   IconButton,
@@ -31,8 +29,6 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const { login } = useAuth();
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const handleSubmit = async (e) => {
     e.preventDefault();
